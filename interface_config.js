@@ -46,7 +46,7 @@ var interfaceConfig = {
 
     DEFAULT_BACKGROUND: '#004065',
     DEFAULT_LOCAL_DISPLAY_NAME: 'Saya',
-    DEFAULT_LOGO_URL: 'images/watermark.png',
+    DEFAULT_LOGO_URL: '../images/watermark.png',
     DEFAULT_REMOTE_DISPLAY_NAME: 'Insan DJPb',
 
     DISABLE_DOMINANT_SPEAKER_INDICATOR: false,

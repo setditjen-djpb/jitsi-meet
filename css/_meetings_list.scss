@@ -43,7 +43,9 @@
     }
 
     .item {
-        background: rgba(255,255,255,0.50);
+        /*background: rgba(255,255,255,0.50);*/
+        background: rgb(23, 84, 169);
+        color: #FFFFFF;
         box-sizing: border-box;
         display: inline-flex;
         margin-top: 5px;

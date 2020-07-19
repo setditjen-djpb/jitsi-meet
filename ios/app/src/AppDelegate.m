@@ -37,6 +37,10 @@
 
     jitsiMeet.defaultConferenceOptions = [JitsiMeetConferenceOptions fromBuilder:^(JitsiMeetConferenceOptionsBuilder *builder) {
         [builder setFeatureFlag:@"resolution" withValue:@(360)];
+        [builder setFeatureFlag:@"invite.enabled" withBoolean:false];
+        [builder setFeatureFlag:@"call-integration.enabled" withBoolean:false];
+        [builder setFeatureFlag:@"video-share.enabled" withBoolean:false];
+        [builder setFeatureFlag:@"close-captions.enabled" withBoolean:false];
         builder.serverURL = [NSURL URLWithString:@"https://meet.jit.si"];
         builder.welcomePageEnabled = YES;
 
