@@ -33,7 +33,7 @@
 
     jitsiMeet.conferenceActivityType = JitsiMeetConferenceActivityType;
     jitsiMeet.customUrlScheme = @"org.jitsi.meet";
-    jitsiMeet.universalLinkDomains = @[@"meet.jit.si", @"alpha.jitsi.net", @"beta.meet.jit.si"];
+    jitsiMeet.universalLinkDomains = @[@"meet.jit.si", @"alpha.jitsi.net", @"beta.meet.jit.si", @"meet.setditjen-djpb.net"];
 
     jitsiMeet.defaultConferenceOptions = [JitsiMeetConferenceOptions fromBuilder:^(JitsiMeetConferenceOptionsBuilder *builder) {
         [builder setFeatureFlag:@"resolution" withValue:@(360)];
@@ -41,7 +41,7 @@
         [builder setFeatureFlag:@"call-integration.enabled" withBoolean:false];
         [builder setFeatureFlag:@"video-share.enabled" withBoolean:false];
         [builder setFeatureFlag:@"close-captions.enabled" withBoolean:false];
-        builder.serverURL = [NSURL URLWithString:@"https://meet.jit.si"];
+        builder.serverURL = [NSURL URLWithString:@"https://meet.setditjen-djpb.net"];
         builder.welcomePageEnabled = YES;
 
         // Apple rejected our app because they claim requiring a
