@@ -136,6 +136,7 @@ body.welcome-page {
             background: #75A7E7;
             display: $welcomePageTabContainerDisplay;
             flex-direction: column;
+            top: 10px;
 
             .tab-content{
                 display: $welcomePageTabContentDisplay;

@@ -138,12 +138,14 @@ form {
     background-position: center left;
     background-repeat: no-repeat;
     background-size: contain;
+    z-index: $zindex2;
 }
 
 .rightwatermark {
     right: 32px;
     top: 32px;
     background-position: center right;
+    z-index: $zindex2;
 }
 
 .poweredby {

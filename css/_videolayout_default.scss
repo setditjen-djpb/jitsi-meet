@@ -266,12 +266,16 @@
     position: absolute;
     left: 10%;
     width: 80%;
-    top: 50%;
+    bottom: 0%;
+    /*
     @include transform(translateY(-40%));
+    opacity: 0.75; 
+    background-color: #273746;     
+    */
     color: $participantNameColor;
     text-align: center;
     text-overflow: ellipsis;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 100;
     overflow: hidden;
     white-space: nowrap;

@@ -455,11 +455,11 @@ export default class SmallVideo {
             return input.isVideoPlayable && !input.isAudioOnly ? DISPLAY_BLACKNESS_WITH_NAME : DISPLAY_AVATAR_WITH_NAME;
         } else if (input.isVideoPlayable && input.hasVideo && !input.isAudioOnly) {
             // check hovering and change state to video with name
-            return input.isHovered ? DISPLAY_VIDEO_WITH_NAME : DISPLAY_VIDEO;
+            return DISPLAY_VIDEO_WITH_NAME;
         }
 
         // check hovering and change state to avatar with name
-        return input.isHovered ? DISPLAY_AVATAR_WITH_NAME : DISPLAY_AVATAR;
+        return DISPLAY_AVATAR_WITH_NAME;
     }
 
     /**
@@ -511,6 +511,7 @@ export default class SmallVideo {
 
         switch (this.displayMode) {
         case DISPLAY_AVATAR_WITH_NAME:
+            
             displayModeString = 'avatar-with-name';
             this.$container.addClass('display-avatar-with-name');
             break;
@@ -528,8 +529,8 @@ export default class SmallVideo {
             break;
         case DISPLAY_AVATAR:
         default:
-            displayModeString = 'avatar';
-            this.$container.addClass('display-avatar-only');
+            displayModeString = 'avatar-with-name';
+            this.$container.addClass('display-avatar-with-name');
             break;
         }
 

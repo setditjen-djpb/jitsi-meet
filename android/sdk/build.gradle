@@ -158,16 +158,16 @@ android.libraryVariants.all { def variant ->
         // Bundle sounds
         //
         copy {
-            from("${projectDir}/../../sounds/incomingMessage.wav")
-            from("${projectDir}/../../sounds/joined.wav")
-            from("${projectDir}/../../sounds/left.wav")
+            from("${projectDir}/../../sounds/incomingMessage.mp3")
+            from("${projectDir}/../../sounds/joined.mp3")
+            from("${projectDir}/../../sounds/left.mp3")
             from("${projectDir}/../../sounds/liveStreamingOn.mp3")
             from("${projectDir}/../../sounds/liveStreamingOff.mp3")
-            from("${projectDir}/../../sounds/outgoingRinging.wav")
-            from("${projectDir}/../../sounds/outgoingStart.wav")
+            from("${projectDir}/../../sounds/outgoingRinging.mp3")
+            from("${projectDir}/../../sounds/outgoingStart.mp3")
             from("${projectDir}/../../sounds/recordingOn.mp3")
             from("${projectDir}/../../sounds/recordingOff.mp3")
-            from("${projectDir}/../../sounds/rejected.wav")
+            from("${projectDir}/../../sounds/rejected.mp3")
             into("${assetsDir}/sounds")
         }
 

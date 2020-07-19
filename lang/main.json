@@ -147,7 +147,7 @@
         "tryAgainButton": "Try again in desktop"
     },
     "defaultLink": "e.g. {{url}}",
-    "defaultNickname": "ex. Jane Pink",
+    "defaultNickname": "ex. Insan Perbendaharaan",
     "deviceError": {
         "cameraError": "Failed to access your camera",
         "cameraPermission": "Error obtaining camera permission",
@@ -834,9 +834,9 @@
     "welcomepage": {
         "accessibilityLabel": {
             "join": "Tap to join",
-            "roomname": "Enter room name"
+            "roomname": "Masukkan nama ruang meeting"
         },
-        "appDescription": "Go ahead, video chat with the whole team. In fact, invite everyone you know. {{app}} is a fully encrypted, 100% open source video conferencing solution that you can use all day, every day, for free — with no account needed.",
+        "appDescription": "Aplikasi layanan tatap muka secara daring DJPb, dikembangkan oleh Tim Inovasi TIK Sekretariat Direktorat Jenderal Perbendaharaan, dapat digunakan oleh semua pegawai Ditjen Perbendaharaan untuk keperluan perkantoran dengan jaminan keamanan maksimal, sehingga memberikan kenyamanan pada pegawai dalam melakukan panggilan tatap muka.",
         "audioVideoSwitch": {
             "audio": "Voice",
             "video": "Video"
@@ -844,7 +844,7 @@
         "calendar": "Calendar",
         "connectCalendarButton": "Connect your calendar",
         "connectCalendarText": "Connect your calendar to view all your meetings in {{app}}. Plus, add {{provider}} meetings to your calendar and start them with one click.",
-        "enterRoomTitle": "Start a new meeting",
+        "enterRoomTitle": "Atur nama Ruang Meeting",
         "getHelp": "Get help",
         "go": "GO",
         "goSmall": "GO",
@@ -854,14 +854,14 @@
         "privacy": "Privacy",
         "recentList": "Recent",
         "recentListDelete": "Delete",
-        "recentListEmpty": "Your recent list is currently empty. Chat with your team and you will find all your recent meetings here.",
+        "recentListEmpty": "Daftar meeting terakhir Anda akan muncul di sini.",
         "reducedUIText": "Welcome to {{app}}!",
         "roomNameAllowedChars": "Meeting name should not contain any of these characters: ?, &, :, ', \", %, #.",
-        "roomname": "Enter room name",
+        "roomname": "Masukkan nama ruang meeting",
         "roomnameHint": "Enter the name or URL of the room you want to join. You may make a name up, just let the people you are meeting know it so that they enter the same name.",
         "sendFeedback": "Send feedback",
         "terms": "Terms",
-        "title": "Secure, fully featured, and completely free video conferencing"
+        "title": "DJPb Secured Video Conference"
     },
     "lonelyMeetingExperience": {
         "button": "Invite others",

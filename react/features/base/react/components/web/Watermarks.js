@@ -260,9 +260,9 @@ class Watermarks extends Component<Props, State> {
             return (
                 <a
                     className = 'poweredby'
-                    href = 'http://jitsi.org'
+                    href = 'https://tim-inovasi-tik.setditjen-djpb.net'
                     target = '_new'>
-                    <span>{ t('poweredby') } jitsi.org</span>
+                    <span>{ t('poweredby') } Tim Inovasi IT SetDJPb</span>
                 </a>
             );
         }
