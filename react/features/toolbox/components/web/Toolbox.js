@@ -26,7 +26,8 @@ import {
 import {
     getLocalParticipant,
     getParticipants,
-    participantUpdated
+    participantUpdated,
+    isLocalParticipantModerator
 } from '../../../base/participants';
 import { connect, equals } from '../../../base/redux';
 import { OverflowMenuItem } from '../../../base/toolbox';
@@ -131,6 +132,11 @@ type Props = {
      * Whether or not the current user is logged in through a JWT.
      */
     _isGuest: boolean,
+
+    /**
+     * Whether or not the current user is Moderator.
+     */
+    _isModerator: boolean,
 
     /**
      * The ID of the local participant.
@@ -670,7 +676,9 @@ class Toolbox extends Component<Props, State> {
                 enable: !this.props._screensharing
             }));
 
-        this._doToggleScreenshare();
+        if (this.props._isModerator) {
+            this._doToggleScreenshare();
+        }
     }
 
     _onToolbarOpenFeedback: () => void;
@@ -908,6 +916,7 @@ class Toolbox extends Component<Props, State> {
 
         if (isInOverflowMenu) {
             return (
+                this.props._isModerator &&
                 <OverflowMenuItem
                     accessibilityLabel
                         = { t('toolbar.accessibilityLabel.shareYourScreen') }
@@ -930,6 +939,7 @@ class Toolbox extends Component<Props, State> {
                 ? 'dialog.shareYourScreen' : _desktopSharingDisabledTooltipKey);
 
         return (
+            this.props._isModerator &&
             <ToolbarButton
                 accessibilityLabel
                     = { t('toolbar.accessibilityLabel.shareYourScreen') }
@@ -987,8 +997,9 @@ class Toolbox extends Component<Props, State> {
             <RecordButton
                 key = 'record'
                 showLabel = { true } />,
-            this._shouldShowButton('sharedvideo')
-                && <OverflowMenuItem
+           this._shouldShowButton('sharedvideo')
+           && this.props._isModerator
+               && <OverflowMenuItem
                     accessibilityLabel = { t('toolbar.accessibilityLabel.sharedvideo') }
                     icon = { IconShareVideo }
                     key = 'sharedvideo'
@@ -1346,6 +1357,7 @@ function _mapStateToProps(state) {
         overflowMenuVisible
     } = state['features/toolbox'];
     const localParticipant = getLocalParticipant(state);
+    const isModerator = isLocalParticipantModerator(state);
     const localRecordingStates = state['features/local-recording'];
     const localVideo = getLocalVideoTrack(state['features/base/tracks']);
 
@@ -1380,6 +1392,7 @@ function _mapStateToProps(state) {
         _dialog: Boolean(state['features/base/dialog'].component),
         _feedbackConfigured: Boolean(callStatsID),
         _isGuest: state['features/base/jwt'].isGuest,
+        _isModerator: isModerator,
         _fullScreen: fullScreen,
         _tileViewEnabled: state['features/video-layout'].tileViewEnabled,
         _localParticipantID: localParticipant.id,
