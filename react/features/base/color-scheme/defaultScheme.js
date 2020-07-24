@@ -21,7 +21,7 @@ export default {
         privateMsgNotice: 'rgb(186, 39, 58)',
         remoteMsgBackground: 'rgb(241, 242, 246)',
         replyBorder: 'rgb(219, 197, 200)',
-        replyIcon: 'rgb(94, 109, 121)'
+        replyIcon: 'rgb(94, 109, 121)',
     },
     'Conference': {
         inviteButtonBackground: 'rgb(0, 119, 225)',
@@ -33,7 +33,7 @@ export default {
         buttonLabel: ColorPalette.white
     },
     'Header': {
-        background: ColorPalette.blue,
+        background: ColorPalette.red,
         icon: ColorPalette.white,
         statusBar: ColorPalette.blueHighlight,
         statusBarContent: ColorPalette.white,
