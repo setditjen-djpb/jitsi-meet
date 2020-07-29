@@ -24,6 +24,7 @@ import {
     SET_PREJOIN_DISPLAY_NAME_REQUIRED,
     SET_SKIP_PREJOIN,
     SET_JOIN_BY_PHONE_DIALOG_VISIBLITY,
+    SET_PRECALL_TEST_RESULTS,
     SET_PREJOIN_DEVICE_ERRORS,
     SET_PREJOIN_PAGE_VISIBILITY
 } from './actionTypes';
@@ -388,6 +389,19 @@ export function setSkipPrejoin(value: boolean) {
 export function setJoinByPhoneDialogVisiblity(value: boolean) {
     return {
         type: SET_JOIN_BY_PHONE_DIALOG_VISIBLITY,
+        value
+    };
+}
+
+/**
+ * Action used to set data from precall test.
+ *
+ * @param {Object} value - The precall test results.
+ * @returns {Object}
+ */
+export function setPrecallTestResults(value: Object) {
+    return {
+        type: SET_PRECALL_TEST_RESULTS,
         value
     };
 }
