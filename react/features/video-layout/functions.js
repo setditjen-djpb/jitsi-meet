@@ -32,7 +32,8 @@ export function getCurrentLayout(state: Object) {
 export function getMaxColumnCount() {
     const configuredMax = interfaceConfig.TILE_VIEW_MAX_COLUMNS || 5;
 
-    return Math.min(Math.max(configuredMax, 1), 5);
+    //return Math.min(Math.max(configuredMax, 1), 5);
+    return Math.max(configuredMax, 1);
 }
 
 /**

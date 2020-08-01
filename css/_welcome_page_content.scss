@@ -1,1 +1,115 @@
 /** Insert custom CSS for any additional content in the welcome page **/
+.welcome-page-content {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	justify-content: space-between;
+	position: relative;
+	z-index: 1;
+	margin-top: 35px;
+	width: 100%
+}
+
+.welcome-page-content .more-footer {
+	color: #fff;
+	display: flex;
+	min-height: 190px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	width: 100%;
+	z-index: 1;
+	font-size: 22px;
+	letter-spacing: -.13px
+}
+
+.welcome-page-content .more-section-links img {
+	display: inline-block;
+	height: 40px;
+	margin-top: 20px
+}
+
+.welcome-page-content .welcome-footer {
+	color: #fff;
+	display: flex;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	width: 100%;
+	z-index: 1
+}
+
+.welcome-page-content .welcome-footer-curve {
+	background-color: #1754a9;
+	border-bottom-left-radius: 50%;
+	border-bottom-right-radius: 50%;
+	height: 100px;
+	pointer-events: none;
+	position: absolute;
+	z-index: 1;
+	width: 100%
+}
+
+.welcome-page-content .more-section-title {
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 16px;
+	margin-bottom: 16px;
+	text-align: center
+}
+
+.welcome-page-content .welcome-footer-content a {
+	color: #fff!important;
+	text-decoration: underline
+}
+
+.welcome-page-content .welcome-footer-content {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	z-index: 2
+}
+
+.welcome-page-content .more-section,
+.welcome-page-content .welcome-footer-about,
+.welcome-page-content .welcome-footer-connect {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	font-size: 14px;
+	line-height: 20px
+}
+
+.welcome-page-content .more-section:last-child,
+.welcome-page-content .welcome-footer-about:last-child,
+.welcome-page-content .welcome-footer-connect:last-child {
+	margin-left: 4px
+}
+
+.welcome-page-content .welcome-footer-about,
+.welcome-page-content .welcome-footer-connect {
+	text-align: center;
+	justify-content: center
+}
+
+.welcome-page-content .more-section {
+	background: rgba(9, 30, 66, .2);
+	align-items: center;
+	justify-content: center;
+	text-align: center
+}
+
+.welcome-page-content .more-section .more-section-content {
+	max-width: 380px;
+	max-height: 180px
+}
+
+.welcome-page-content .welcome-footer-connect-links ul {
+	padding: 0
+}
+
+.welcome-page-content .welcome-footer-connect-links li {
+	display: inline-block;
+	height: 36px;
+	list-style: none;
+	margin-right: 16px;
+	width: 36px
+}
