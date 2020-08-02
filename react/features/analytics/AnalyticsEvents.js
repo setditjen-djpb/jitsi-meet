@@ -574,6 +574,21 @@ export function createVideoBlurEvent(action) {
 }
 
 /**
+ * Creates an event indicating that an action related to video greenscreen
+ * occurred (e.g. It was started or stopped).
+ *
+ * @param {string} action - The action which occurred.
+ * @returns {Object} The event in a format suitable for sending via
+ * sendAnalytics.
+ */
+export function createVideoGreenScreenEvent(action) {
+    return {
+        action,
+        actionSubject: 'video.greenscreen'
+    };
+}
+
+/**
  * Creates an event indicating that an action related to screen sharing
  * occurred (e.g. It was started or stopped).
  *
