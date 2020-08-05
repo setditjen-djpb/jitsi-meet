@@ -1192,7 +1192,7 @@ class Toolbox extends Component<Props, State> {
         const maxNumberOfButtonsPerGroup = Math.floor(
             (
                 this.state.windowWidth
-                    - 168 // the width of the central group by design
+                    - 224 // the width of the central group by design
                     - 48 // the minimum space between the button groups
             )
             / 56 // the width + padding of a button

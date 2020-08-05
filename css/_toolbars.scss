@@ -77,6 +77,7 @@
         }
 
         .button-group-center {
+            z-index: $sideToolbarContainerZ;
             justify-content: center;
 
             .toolbox-button {
