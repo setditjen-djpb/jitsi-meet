@@ -118,7 +118,46 @@
                     }
                 }
 
-                &:nth-child(2) {
+                &:nth-child(3) {
+                    .toolbox-icon {
+                        background-color: #fff;
+                        border-radius: 50%;
+                        border: 1px solid #d1dbe8;
+                        margin: 0px 4px;
+                        width: 38px;
+                        height: 38px;
+                
+                        &:hover {
+                            background-color: #daebfa;
+                            border: 1px solid #daebfa;
+                        }
+                        
+                        &.toggled {
+                            background: $presence-available;
+                            border: 1px solid $presence-available;
+        
+                            svg {
+                                fill: #fff;
+                            }
+            
+                            &:hover {
+                                background-color: $presence-available;
+                            }
+                        }
+            
+                        &.disabled, .disabled & {
+                            cursor: initial;
+                            color: #fff;
+                            background-color: #a4b8d1;
+                        }
+
+                        svg {
+                            fill: #5e6d7a;
+                        }
+                    }
+                }
+
+                &:nth-last-child(1) {
                     .toolbox-icon {
                         background-color: $hangupColor;
                         border: 1px solid $hangupColor;
