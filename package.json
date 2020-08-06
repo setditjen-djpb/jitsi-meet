@@ -127,6 +127,7 @@
     "expose-loader": "0.7.5",
     "flow-bin": "0.104.0",
     "imports-loader": "0.7.1",
+    "jest": "^26.2.2",
     "jetifier": "1.6.4",
     "metro-react-native-babel-preset": "0.56.0",
     "node-sass": "4.14.1",
@@ -146,6 +147,7 @@
   "scripts": {
     "lint": "eslint . && flow",
     "postinstall": "jetify",
+    "test": "jest",
     "validate": "npm ls",
     "build-node-sass": "./node_modules/.bin/node-sass css/main.scss css/all.bundle.css",
     "cleancss": "./node_modules/.bin/cleancss  --skip-rebase css/all.bundle.css > css/all.css"
