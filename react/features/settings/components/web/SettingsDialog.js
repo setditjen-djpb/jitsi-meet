@@ -19,6 +19,7 @@ import CalendarTab from './CalendarTab';
 import GreenScreenTab from './GreenScreenTab';
 import MoreTab from './MoreTab';
 import ProfileTab from './ProfileTab';
+import { isMobileBrowser } from '../../../base/environment/utils';
 
 declare var APP: Object;
 declare var interfaceConfig: Object;
@@ -184,31 +185,31 @@ function _mapStateToProps(state) {
             styles: 'settings-pane calendar-pane'
         });
     }
-
-    tabs.push({
-        name: SETTINGS_TABS.GREEN_SCREEN,
-        component: GreenScreenTab,
-        label: 'settings.greenScreen.title',
-        props: state['features/green-screen/settings'],
-        propsUpdateFunction: (tabState, newProps) => {
-            return {
-                ...newProps,
-                enabled: tabState.enabled,
-                image: tabState.image,
-                algorithmType: tabState.algorithmType,
-                outputStride: tabState.outputStride,
-                multiplier: tabState.multiplier,
-                quantBytes: tabState.quantBytes,
-                chromaKey: tabState.chromaKey,
-                chromaThreshold: tabState.chromaThreshold,
-                fps: tabState.fps,
-                internalResolution: tabState.internalResolution
-            };
-        },
-        styles: 'settings-pane green-screen-pane',
-        submit: submitGreenScreenTab
-    });
-
+    if (!isMobileBrowser()) {
+        tabs.push({
+            name: SETTINGS_TABS.GREEN_SCREEN,
+            component: GreenScreenTab,
+            label: 'settings.greenScreen.title',
+            props: state['features/green-screen/settings'],
+            propsUpdateFunction: (tabState, newProps) => {
+                return {
+                    ...newProps,
+                    enabled: tabState.enabled,
+                    image: tabState.image,
+                    algorithmType: tabState.algorithmType,
+                    outputStride: tabState.outputStride,
+                    multiplier: tabState.multiplier,
+                    quantBytes: tabState.quantBytes,
+                    chromaKey: tabState.chromaKey,
+                    chromaThreshold: tabState.chromaThreshold,
+                    fps: tabState.fps,
+                    internalResolution: tabState.internalResolution
+                };
+            },
+            styles: 'settings-pane green-screen-pane',
+            submit: submitGreenScreenTab
+        });
+    }
     if (showModeratorSettings || showLanguageSettings || showPrejoinSettings) {
         tabs.push({
             name: SETTINGS_TABS.MORE,

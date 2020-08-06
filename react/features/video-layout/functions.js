@@ -2,6 +2,7 @@
 
 import { getPinnedParticipant, getParticipantCount } from '../base/participants';
 import { isYoutubeVideoPlaying } from '../youtube-player/functions';
+import { isMobileBrowser } from '../base/environment/utils';
 
 import { LAYOUTS } from './constants';
 
@@ -26,13 +27,16 @@ export function getCurrentLayout(state: Object) {
 
 /**
  * Returns how many columns should be displayed in tile view. The number
- * returned will be between 1 and 5, inclusive.
+ * returned will be between 1 and 5 or TILE_VIEW_MAX_COLUMNS, inclusive.
  *
  * @returns {number}
  */
 export function getMaxColumnCount() {
-    const configuredMax = interfaceConfig.TILE_VIEW_MAX_COLUMNS || 5;
+    let configuredMax = interfaceConfig.TILE_VIEW_MAX_COLUMNS || 5;
 
+    if (isMobileBrowser()) {
+        configuredMax = 2;
+    }
     //return Math.min(Math.max(configuredMax, 1), 5);
     return Math.max(configuredMax, 1);
 }

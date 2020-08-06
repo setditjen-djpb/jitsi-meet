@@ -9,6 +9,7 @@ import {
     sendAnalytics
 } from '../../../analytics';
 import { openDialog, toggleDialog } from '../../../base/dialog';
+import { isMobileBrowser } from '../../../base/environment/utils';
 import { translate } from '../../../base/i18n';
 import {
     IconChat,
@@ -942,6 +943,7 @@ class Toolbox extends Component<Props, State> {
 
         return (
             this.props._isModerator &&
+            !isMobileBrowser() &&
             <ToolbarButton
                 accessibilityLabel
                     = { t('toolbar.accessibilityLabel.shareYourScreen') }
@@ -1001,6 +1003,7 @@ class Toolbox extends Component<Props, State> {
                 showLabel = { true } />,
            this._shouldShowButton('sharedvideo')
            && this.props._isModerator
+           && !isMobileBrowser()
                && <OverflowMenuItem
                     accessibilityLabel = { t('toolbar.accessibilityLabel.sharedvideo') }
                     icon = { IconShareVideo }
@@ -1011,14 +1014,14 @@ class Toolbox extends Component<Props, State> {
                 && <SharedDocumentButton
                     key = 'etherpad'
                     showLabel = { true } />,
-            <VideoBlurButton
+             <VideoBlurButton
                 key = 'videobackgroundblur'
                 showLabel = { true }
-                visible = { this._shouldShowButton('videobackgroundblur') && !_screensharing } />,
-            <VideoGreenScreenButton
+                visible = { this._shouldShowButton('videobackgroundblur') && !_screensharing && !isMobileBrowser() } />,
+             <VideoGreenScreenButton
                 key = 'videobackgroundgreenscreen'
                 showLabel = { true }
-                visible = { this._shouldShowButton('videobackgroundgreenscreen') && !_screensharing } />,  
+                visible = { this._shouldShowButton('videobackgroundgreenscreen') && !_screensharing && !isMobileBrowser() } />,  
             <SettingsButton
                 key = 'settings'
                 showLabel = { true }
@@ -1028,6 +1031,7 @@ class Toolbox extends Component<Props, State> {
                 showLabel = { true }
                 visible = { this._shouldShowButton('mute-everyone') } />,
             this._shouldShowButton('stats')
+            && !isMobileBrowser()
                 && <OverflowMenuItem
                     accessibilityLabel = { t('toolbar.accessibilityLabel.speakerStats') }
                     icon = { IconPresentation }
@@ -1035,6 +1039,7 @@ class Toolbox extends Component<Props, State> {
                     onClick = { this._onToolbarOpenSpeakerStats }
                     text = { t('toolbar.speakerStats') } />,
             this._shouldShowButton('feedback')
+            && !isMobileBrowser()
                 && _feedbackConfigured
                 && <OverflowMenuItem
                     accessibilityLabel = { t('toolbar.accessibilityLabel.feedback') }
@@ -1043,6 +1048,7 @@ class Toolbox extends Component<Props, State> {
                     onClick = { this._onToolbarOpenFeedback }
                     text = { t('toolbar.feedback') } />,
             this._shouldShowButton('shortcuts')
+            && !isMobileBrowser()
                 && <OverflowMenuItem
                     accessibilityLabel = { t('toolbar.accessibilityLabel.shortcuts') }
                     icon = { IconOpenInNew }
@@ -1050,10 +1056,12 @@ class Toolbox extends Component<Props, State> {
                     onClick = { this._onToolbarOpenKeyboardShortcuts }
                     text = { t('toolbar.shortcuts') } />,
             this._shouldShowButton('download')
+            && !isMobileBrowser()
                 && <DownloadButton
                     key = 'download'
                     showLabel = { true } />,
             this._shouldShowButton('help')
+            && !isMobileBrowser()
                 && <HelpButton
                     key = 'help'
                     showLabel = { true } />
@@ -1190,15 +1198,31 @@ class Toolbox extends Component<Props, State> {
         const buttonsLeft = [];
         const buttonsRight = [];
 
+        const smallThreshold = 700;
+        const verySmallThreshold = 500;
+
+        let minSpaceBetweenButtons = 48;
+        let widthPlusPaddingOfButton = 56;
+
+        if (this.state.windowWidth <= verySmallThreshold) {
+            minSpaceBetweenButtons = 26;
+            widthPlusPaddingOfButton = 28;
+        } else if (this.state.windowWidth <= smallThreshold) {
+            minSpaceBetweenButtons = 36;
+            widthPlusPaddingOfButton = 40;
+        }
+
         const maxNumberOfButtonsPerGroup = Math.floor(
             (
                 this.state.windowWidth
                     - 224 // the width of the central group by design
-                    - 48 // the minimum space between the button groups
+                    - minSpaceBetweenButtons // the minimum space between the button groups
             )
-            / 56 // the width + padding of a button
+            / widthPlusPaddingOfButton // the width + padding of a button
             / 2 // divide by the number of groups(left and right group)
         );
+
+        const showOverflowMenu = this.state.windowWidth >= verySmallThreshold || isMobileBrowser();
 
         if (this._shouldShowButton('chat')) {
             buttonsLeft.push('chat');
@@ -1213,7 +1237,7 @@ class Toolbox extends Component<Props, State> {
         if (this._shouldShowButton('closedcaptions')) {
             buttonsLeft.push('closedcaptions');
         }
-        if (overflowHasItems) {
+        if (overflowHasItems && showOverflowMenu) {
             buttonsRight.push('overflowmenu');
         }
         if (this._shouldShowButton('invite')) {
@@ -1236,13 +1260,13 @@ class Toolbox extends Component<Props, State> {
             movedButtons.push(...buttonsLeft.splice(
                 maxNumberOfButtonsPerGroup,
                 buttonsLeft.length - maxNumberOfButtonsPerGroup));
-            if (buttonsRight.indexOf('overflowmenu') === -1) {
+            if (buttonsRight.indexOf('overflowmenu') === -1 && showOverflowMenu) {
                 buttonsRight.unshift('overflowmenu');
             }
         }
 
         if (buttonsRight.length > maxNumberOfButtonsPerGroup) {
-            if (buttonsRight.indexOf('overflowmenu') === -1) {
+            if (buttonsRight.indexOf('overflowmenu') === -1 && showOverflowMenu)  {
                 buttonsRight.unshift('overflowmenu');
             }
 
