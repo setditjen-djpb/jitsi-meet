@@ -63,7 +63,7 @@ class LobbySection extends PureComponent<Props, State> {
      *
      * @inheritdoc
      */
-    componentDidUpdate(prevProps, prevState) {
+
         static getDerivedStateFromProps(props: Props, state: Object) {
             if (props._lobbyEnabled !== state.lobbyEnabled) {
     
@@ -74,7 +74,6 @@ class LobbySection extends PureComponent<Props, State> {
     
             return null;
         }
-    }
 
     /**
      * Implements {@code PureComponent#render}.
