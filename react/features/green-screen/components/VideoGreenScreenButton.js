@@ -6,8 +6,8 @@ import { createVideoGreenScreenEvent, sendAnalytics } from '../../analytics';
 import { translate } from '../../base/i18n';
 import { IconGreenScreenBackground } from '../../base/icons';
 import { connect } from '../../base/redux';
-import { AbstractButton, BetaTag } from '../../base/toolbox';
-import type { AbstractButtonProps } from '../../base/toolbox';
+import { AbstractButton, BetaTag } from '../../base/toolbox/components';
+import type { AbstractButtonProps } from '../../base/toolbox/components';
 import { toggleGreenScreenEffect } from '../actions';
 
 /**

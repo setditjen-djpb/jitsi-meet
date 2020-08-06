@@ -7,8 +7,7 @@ import {
     isLocalParticipantModerator,
     isParticipantModerator
 } from '../../base/participants';
-import { AbstractButton } from '../../base/toolbox';
-import type { AbstractButtonProps } from '../../base/toolbox';
+import { AbstractButton, type AbstractButtonProps } from '../../base/toolbox/components';
 
 import { GrantModeratorDialog } from '.';
 
