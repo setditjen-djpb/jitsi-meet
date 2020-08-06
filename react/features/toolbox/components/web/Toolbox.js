@@ -60,6 +60,7 @@ import {
 } from '../../../subtitles';
 import {
     TileViewButton,
+    shouldDisplayTileView,
     toggleTileView
 } from '../../../video-layout';
 import {
@@ -1401,7 +1402,7 @@ function _mapStateToProps(state) {
         _isGuest: state['features/base/jwt'].isGuest,
         _isModerator: isModerator,
         _fullScreen: fullScreen,
-        _tileViewEnabled: state['features/video-layout'].tileViewEnabled,
+        _tileViewEnabled: shouldDisplayTileView(state),
         _localParticipantID: localParticipant.id,
         _localRecState: localRecordingStates,
         _locked: locked,
