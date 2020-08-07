@@ -169,7 +169,6 @@ async function clean() {
  */
 async function dev() {
     await deployInit();
-    await deployAppBundle();
     await deployCss();
     await deployRnnoiseBinary();
     await deployLibJitsiMeet();

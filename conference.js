@@ -122,7 +122,8 @@ import { suspendDetected } from './react/features/power-monitor';
 import {
     initPrejoin,
     isPrejoinPageEnabled,
-    isPrejoinPageVisible
+    isPrejoinPageVisible,
+    setPrecallTestResults
 } from './react/features/prejoin';
 import { createRnnoiseProcessorPromise } from './react/features/rnnoise';
 import { toggleScreenshotCaptureEffect } from './react/features/screenshot-capture';
@@ -762,6 +763,8 @@ export default {
         if (isPrejoinPageEnabled(APP.store.getState())) {
             _connectionPromise = connect(roomName);
 
+            await this._makePrecallTest();
+
             const { tryCreateLocalTracks, errors } = this.createInitialLocalTracks(initialOptions);
             const tracks = await tryCreateLocalTracks;
 
@@ -1073,6 +1076,20 @@ export default {
      */
     getP2PConnectionState() {
         return room && room.getP2PConnectionState();
+    },
+
+    /**
+     * Initializes the 'precallTest' and executes one test, storing the results.
+     *
+     * @private
+     * @returns {void}
+     */
+    async _makePrecallTest() {
+        await JitsiMeetJS.precallTest.init(this._getConferenceOptions());
+
+        const results = await JitsiMeetJS.precallTest.execute();
+
+        APP.store.dispatch(setPrecallTestResults(results));
     },
 
     /**
@@ -1606,7 +1623,7 @@ export default {
             () => {
                 this.videoSwitchInProgress = false;
                 sendAnalytics(createScreenSharingEvent('stopped'));
-                logger.info('Screen sharing stopped.');               
+                logger.info('Screen sharing stopped.');
             },
             error => {
                 this.videoSwitchInProgress = false;
