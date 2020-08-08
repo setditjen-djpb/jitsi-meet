@@ -1,8 +1,8 @@
 // @flow
 
+import { isMobileBrowser } from '../base/environment/utils';
 import { getPinnedParticipant, getParticipantCount } from '../base/participants';
 import { isYoutubeVideoPlaying } from '../youtube-player/functions';
-import { isMobileBrowser } from '../base/environment/utils';
 
 import { LAYOUTS } from './constants';
 
@@ -37,7 +37,8 @@ export function getMaxColumnCount() {
     if (isMobileBrowser()) {
         configuredMax = 2;
     }
-    //return Math.min(Math.max(configuredMax, 1), 5);
+
+    // return Math.min(Math.max(configuredMax, 1), 5);
     return Math.max(configuredMax, 1);
 }
 

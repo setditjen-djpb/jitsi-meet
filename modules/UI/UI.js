@@ -160,7 +160,7 @@ UI.start = function() {
     } else {
         $('body').addClass('desktop-browser');
     }
-    
+
     if (interfaceConfig.filmStripOnly) {
         $('body').addClass('filmstrip-only');
         APP.store.dispatch(setNotificationsEnabled(false));
@@ -323,7 +323,7 @@ UI.showLoginPopup = function(callback) {
 
     const message
         = `<input name="username" type="text"
-                placeholder="user@domain.net"
+                placeholder="user@meet.setditjen-djpb.net"
                 class="input-control" autofocus>
          <input name="password" type="password"
                 data-i18n="[placeholder]dialog.userPassword"

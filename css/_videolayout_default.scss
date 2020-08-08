@@ -81,7 +81,7 @@
         bottom: 0;
         height: $thumbnailToolbarHeight;
         padding: 0 5px 0 5px;
-        
+
     }
 
     &__toptoolbar {
@@ -127,7 +127,7 @@
             z-index: $zindex3;
             background: $dominantSpeakerBg;
             color: $thumbnailPictogramColor;
-            border: $thumbnailIndicatorBorder solid $thumbnailPictogramColor;
+            /*border: $thumbnailIndicatorBorder solid $thumbnailPictogramColor;*/
 
             .indicatoricon {
                 @include absoluteAligning();
@@ -267,12 +267,12 @@
     position: absolute;
     left: 10%;
     width: 80%;
-    top: 0%;
-    /*bottom: 0%;*/
+    top: 0;
+    /*bottom: 0;*/
     /*
     @include transform(translateY(-40%));
-    opacity: 0.75; 
-    background-color: #273746;     
+    opacity: 0.75;
+    background-color: #273746;
     */
     color: $participantNameColor;
     text-align: center;

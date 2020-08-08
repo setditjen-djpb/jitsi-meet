@@ -362,6 +362,16 @@ export default class SmallVideo {
     }
 
     /**
+     * Returns the edit display name element, which appears on the video thumbnail.
+     *
+     * @return {jQuery} a jQuery selector pointing to the edit display name element of
+     * the video thumbnail
+     */
+    $editdisplayname() {
+        return this.$container.find('.editdisplayname');
+    }
+
+    /**
      * Creates or updates the participant's display name that is shown over the
      * video preview.
      *
@@ -511,7 +521,7 @@ export default class SmallVideo {
 
         switch (this.displayMode) {
         case DISPLAY_AVATAR_WITH_NAME:
-            
+
             displayModeString = 'avatar-with-name';
             this.$container.addClass('display-avatar-with-name');
             break;
@@ -843,6 +853,7 @@ export default class SmallVideo {
                 height: '50%',
                 width: `${heightToWidthPercent / 2}%`
             });
+
             break;
         }
         case LAYOUTS.HORIZONTAL_FILMSTRIP_VIEW: {
@@ -864,6 +875,7 @@ export default class SmallVideo {
                     height: `${avatarSize}px`,
                     width: `${avatarSize}px`
                 });
+
             }
             break;
         }
@@ -885,6 +897,7 @@ export default class SmallVideo {
                     height: `${avatarSize}px`,
                     width: `${avatarSize}px`
                 });
+
             }
             break;
         }
