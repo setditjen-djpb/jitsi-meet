@@ -20,7 +20,7 @@ require('moment/locale/it');
 require('moment/locale/nb');
 
 // OC is not available. Please submit OC translation to the MomentJS project.
-
+require('moment/locale/id');
 require('moment/locale/pl');
 require('moment/locale/pt');
 require('moment/locale/pt-br');
@@ -98,5 +98,5 @@ function _getSupportedLocale() {
         }
     }
 
-    return supportedLocale || 'en';
+    return supportedLocale || 'id';
 }

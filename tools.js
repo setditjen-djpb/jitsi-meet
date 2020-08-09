@@ -154,6 +154,14 @@ async function deploy() {
 }
 
 /**
+ * deployStyles
+ * @returns {Promise<void>} nothing
+ */
+async function deployStyles() {
+    await deployCss();
+}
+
+/**
  * clean
  * @returns {Promise<void>} nothing
  */
@@ -190,4 +198,7 @@ case 'clean':
     break;
 case 'dev':
     runPromise(dev);
+    break;
+case 'styles':
+    runPromise(deployStyles);
 }

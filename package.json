@@ -157,6 +157,7 @@
     "compile": "node tools.js compile",
     "package": "node tools.js deploy",
     "dev": "node tools.js dev",
+    "styles": "node tools.js styles",
     "clean": "node tools.js clean"
   },
   "browser": {
