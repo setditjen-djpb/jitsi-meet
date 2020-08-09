@@ -170,7 +170,8 @@ $watermarkHeight: 74px;
  */
 $welcomePageDescriptionColor: #fff;
 $welcomePageFontFamily: inherit;
-$welcomePageBackground: radial-gradient(farthest-side at 50% 50%, #13538b, rgb(1, 35, 55));
+$welcomePageBackground: url(/images/background/welcome-background.jpg);
+/*$welcomePageBackground: radial-gradient(farthest-side at 50% 50%, #13538b, rgb(1, 35, 55));*/
 $welcomePageTitleColor: #fff;
 
 $welcomePageHeaderBackground: none;
