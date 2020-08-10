@@ -763,7 +763,7 @@ export default {
         if (isPrejoinPageEnabled(APP.store.getState())) {
             _connectionPromise = connect(roomName);
 
-            await this._makePrecallTest();
+            // await this._makePrecallTest();
 
             const { tryCreateLocalTracks, errors } = this.createInitialLocalTracks(initialOptions);
             const tracks = await tryCreateLocalTracks;
