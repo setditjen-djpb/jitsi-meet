@@ -105,7 +105,7 @@ function _updateAutoPinnedParticipant({ dispatch, getState }) {
     const latestScreenshareParticipantId
         = screenShares[screenShares.length - 1];
 
-    const pinned = getPinnedParticipant(getState);     
+    const pinned = getPinnedParticipant(getState);
 
     if (latestScreenshareParticipantId) {
         dispatch(pinParticipant(latestScreenshareParticipantId));

@@ -3,6 +3,7 @@
 import React, { PureComponent } from 'react';
 
 import { AudioSettingsButton, VideoSettingsButton } from '../../../../toolbox/components/web';
+
 import ConnectionStatus from './ConnectionStatus';
 import CopyMeetingUrl from './CopyMeetingUrl';
 import Preview from './Preview';

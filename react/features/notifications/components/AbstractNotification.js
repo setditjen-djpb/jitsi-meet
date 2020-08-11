@@ -149,6 +149,7 @@ export default class AbstractNotification<P: Props> extends Component<P> {
     }
 
     _getDescriptionKey: () => string
+
     /**
      * Returns the description key that was used if any.
      *
@@ -158,7 +159,7 @@ export default class AbstractNotification<P: Props> extends Component<P> {
     _getDescriptionKey() {
         return this.props.descriptionKey;
     }
-    
+
     _onDismissed: () => void;
 
     /**

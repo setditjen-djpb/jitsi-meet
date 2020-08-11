@@ -23,8 +23,8 @@ export default function loadEffects(store: Object): Promise<any> {
                 return Promise.resolve();
             })
         : Promise.resolve();
-     
-        const greenScreenPromise = state['features/green-screen/settings'].enabled
+
+    const greenScreenPromise = state['features/green-screen/settings'].enabled
         ? getGreenScreenEffect(store.getState, store.dispatch)
             .catch(error => {
                 logger.error('Failed to obtain the green screen effect instance with error: ', error);

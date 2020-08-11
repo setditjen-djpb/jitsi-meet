@@ -919,8 +919,8 @@ class Toolbox extends Component<Props, State> {
 
         if (isInOverflowMenu) {
             return (
-                this.props._isModerator &&
-                <OverflowMenuItem
+                this.props._isModerator
+                && <OverflowMenuItem
                     accessibilityLabel
                         = { t('toolbar.accessibilityLabel.shareYourScreen') }
                     disabled = { _desktopSharingEnabled }
@@ -942,9 +942,9 @@ class Toolbox extends Component<Props, State> {
                 ? 'dialog.shareYourScreen' : _desktopSharingDisabledTooltipKey);
 
         return (
-            this.props._isModerator &&
-            !isMobileBrowser() &&
-            <ToolbarButton
+            this.props._isModerator
+            && !isMobileBrowser()
+            && <ToolbarButton
                 accessibilityLabel
                     = { t('toolbar.accessibilityLabel.shareYourScreen') }
                 disabled = { !_desktopSharingEnabled }
@@ -1001,27 +1001,29 @@ class Toolbox extends Component<Props, State> {
             <RecordButton
                 key = 'record'
                 showLabel = { true } />,
-           this._shouldShowButton('sharedvideo')
+            this._shouldShowButton('sharedvideo')
            && this.props._isModerator
            && !isMobileBrowser()
                && <OverflowMenuItem
-                    accessibilityLabel = { t('toolbar.accessibilityLabel.sharedvideo') }
-                    icon = { IconShareVideo }
-                    key = 'sharedvideo'
-                    onClick = { this._onToolbarToggleSharedVideo }
-                    text = { _sharingVideo ? t('toolbar.stopSharedVideo') : t('toolbar.sharedvideo') } />,
+                   accessibilityLabel = { t('toolbar.accessibilityLabel.sharedvideo') }
+                   icon = { IconShareVideo }
+                   key = 'sharedvideo'
+                   onClick = { this._onToolbarToggleSharedVideo }
+                   text = { _sharingVideo ? t('toolbar.stopSharedVideo') : t('toolbar.sharedvideo') } />,
             this._shouldShowButton('etherpad')
                 && <SharedDocumentButton
                     key = 'etherpad'
                     showLabel = { true } />,
-             <VideoBlurButton
+            <VideoBlurButton
                 key = 'videobackgroundblur'
                 showLabel = { true }
-                visible = { this._shouldShowButton('videobackgroundblur') && !_screensharing && !isMobileBrowser() } />,
-             <VideoGreenScreenButton
+                visible = { this._shouldShowButton('videobackgroundblur') && !_screensharing
+                && !isMobileBrowser() } />,
+            <VideoGreenScreenButton
                 key = 'videobackgroundgreenscreen'
                 showLabel = { true }
-                visible = { this._shouldShowButton('videobackgroundgreenscreen') && !_screensharing && !isMobileBrowser() } />,  
+                visible = { this._shouldShowButton('videobackgroundgreenscreen') && !_screensharing
+                && !isMobileBrowser() } />,
             <SettingsButton
                 key = 'settings'
                 showLabel = { true }
@@ -1266,7 +1268,7 @@ class Toolbox extends Component<Props, State> {
         }
 
         if (buttonsRight.length > maxNumberOfButtonsPerGroup) {
-            if (buttonsRight.indexOf('overflowmenu') === -1 && showOverflowMenu)  {
+            if (buttonsRight.indexOf('overflowmenu') === -1 && showOverflowMenu) {
                 buttonsRight.unshift('overflowmenu');
             }
 
@@ -1313,11 +1315,11 @@ class Toolbox extends Component<Props, State> {
                     }
                 </div>
                 <div className = 'button-group-center'>
-               
+
                     { this._renderAudioButton() }
                     { this._renderVideoButton() }
                     { buttonsLeft.indexOf('desktop') !== -1
-                        && this._renderDesktopSharingButton() }                      
+                        && this._renderDesktopSharingButton() }
                     <HangupButton
                         visible = { this._shouldShowButton('hangup') } />
                 </div>

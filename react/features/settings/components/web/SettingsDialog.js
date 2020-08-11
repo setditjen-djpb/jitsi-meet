@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 
 import { getAvailableDevices } from '../../../base/devices';
 import { DialogWithTabs, hideDialog } from '../../../base/dialog';
+import { isMobileBrowser } from '../../../base/environment/utils';
 import { connect } from '../../../base/redux';
 import { isCalendarEnabled } from '../../../calendar-sync';
 import {
@@ -19,7 +20,7 @@ import CalendarTab from './CalendarTab';
 import GreenScreenTab from './GreenScreenTab';
 import MoreTab from './MoreTab';
 import ProfileTab from './ProfileTab';
-import { isMobileBrowser } from '../../../base/environment/utils';
+
 
 declare var APP: Object;
 declare var interfaceConfig: Object;

@@ -74,6 +74,7 @@ var config = {
 
     // Media
     //
+    // eslint-disable-next-line camelcase
     etherpad_base: 'https://wbo.ophir.dev/boards/',
 
     // Audio

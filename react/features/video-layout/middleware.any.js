@@ -50,7 +50,7 @@ MiddlewareRegistry.register(store => next => action => {
         }
     }
 
-    
+
     return result;
 });
 
@@ -68,7 +68,7 @@ StateListenerRegistry.register(
         }
     });
 
-  /**
+/**
  * Respores tile view state, if it wasn't updated since then.
  *
  * @param {Object} store - The Redux Store.
@@ -78,7 +78,7 @@ function _restoreTileViewState({ dispatch, getState }) {
     const { tileViewEnabled } = getState()['features/video-layout'];
 
     if (tileViewEnabled === undefined && previousTileViewEnabled !== undefined) {
-        dispatch(setTileView(previousTileViewEnabled));  
+        dispatch(setTileView(previousTileViewEnabled));
     }
 
     previousTileViewEnabled = undefined;

@@ -32,7 +32,7 @@ MiddlewareRegistry.register(store => next => action => {
     case CONFERENCE_JOINED:
     case PARTICIPANT_JOINED:
     case PARTICIPANT_KICKED:
-    case PARTICIPANT_LEFT:        
+    case PARTICIPANT_LEFT:
     case SCREEN_SHARE_PARTICIPANTS_UPDATED:
     case SELECT_LARGE_VIDEO_PARTICIPANT:
     case SET_AUDIO_ONLY:
@@ -77,11 +77,11 @@ function _updateLastN({ getState }) {
     if (limitedLastN !== undefined) {
         lastN = limitedLastN;
     }
-    
+
     if (typeof appState !== 'undefined' && appState !== 'active') {
         lastN = 0;
     } else if (audioOnly) {
-        
+
         const { screenShares } = state['features/video-layout'];
         const tileViewEnabled = shouldDisplayTileView(state);
         const largeVideoParticipantId = state['features/large-video'].participantId;

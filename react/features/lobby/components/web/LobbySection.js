@@ -63,17 +63,16 @@ class LobbySection extends PureComponent<Props, State> {
      *
      * @inheritdoc
      */
+    static getDerivedStateFromProps(props: Props, state: Object) {
+        if (props._lobbyEnabled !== state.lobbyEnabled) {
 
-        static getDerivedStateFromProps(props: Props, state: Object) {
-            if (props._lobbyEnabled !== state.lobbyEnabled) {
-    
-                return {
-                    lobbyEnabled: props._lobbyEnabled
-                };
-            }
-    
-            return null;
+            return {
+                lobbyEnabled: props._lobbyEnabled
+            };
         }
+
+        return null;
+    }
 
     /**
      * Implements {@code PureComponent#render}.

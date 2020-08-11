@@ -3,7 +3,7 @@
 import { openDialog } from '../../../base/dialog';
 import { IconLiveStreaming } from '../../../base/icons';
 import { JitsiRecordingConstants } from '../../../base/lib-jitsi-meet';
-import { 
+import {
     getLocalParticipant,
     isLocalParticipantModerator
 } from '../../../base/participants';
