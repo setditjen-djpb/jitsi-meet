@@ -110,7 +110,8 @@ const deployRnnoiseBinary = async () => {
 const deployCss = async () => {
     console.log('Deploy css...');
     await spawn(path.resolve(__dirname, NODE_SASS), [ STYLES_MAIN, STYLES_BUNDLE ]);
-    await spawn(path.resolve(__dirname, CLEANCSS), [ STYLES_BUNDLE, '>', STYLES_DESTINATION ]);
+    await spawn(path.resolve(__dirname, CLEANCSS), [ '--skip-rebase ', STYLES_BUNDLE, ' > ', STYLES_DESTINATION ]);
+
     fs.remove(STYLES_BUNDLE);
     console.log('Completed.');
 };
