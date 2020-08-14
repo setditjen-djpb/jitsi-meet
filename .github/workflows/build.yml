@@ -1,0 +1,25 @@
+# Workflow to deploy DJPb Conference on the production environment
+name: CI - Master
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  front-end:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+
+      - name: Setup node
+        uses: actions/setup-node@master
+        with:
+          node-version: 12.x
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: make
