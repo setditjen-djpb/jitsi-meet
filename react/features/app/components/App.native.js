@@ -105,7 +105,6 @@ export class App extends AbstractApp {
                 }
             }
 
-
             dispatch(updateSettings(this.props.userInfo || {}));
 
             // Update settings with feature-flag.

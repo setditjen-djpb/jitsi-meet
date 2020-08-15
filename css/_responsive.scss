@@ -22,7 +22,7 @@
     }
     #videoResolutionLabel {
         display: none;
-    }   
+    }
     .chrome-extension-banner {
         display: none;
     }
@@ -64,5 +64,15 @@
     }
     .remote-video-menu-trigger {
         display: none;
+    }
+}
+
+.new-toolbox {
+    .toolbox-content {
+        .button-group-center, .button-group-left, .button-group-right {
+            .settings-button-small-icon {
+                display: none;
+            }
+        }
     }
 }

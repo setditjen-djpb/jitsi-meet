@@ -102,6 +102,11 @@ var interfaceConfig = {
     GENERATE_ROOMNAMES_ON_WELCOME_PAGE: true,
 
     /**
+     * Hide the logo on the deep linking pages.
+     */
+    HIDE_DEEP_LINKING_LOGO: false,
+
+    /**
      * Hide the invite prompt in the header when alone in the meeting.
      */
     HIDE_INVITE_MORE_HEADER: true,
@@ -185,7 +190,7 @@ var interfaceConfig = {
      * - 'desktop' controls the "Share your screen" button
      */
     TOOLBAR_BUTTONS: [
-        'microphone', 'camera', 'closedcaptions', 'desktop', 'fullscreen',
+        'microphone', 'camera', 'closedcaptions', 'desktop', 'embedmeeting', 'fullscreen',
         'fodeviceselection', 'hangup', 'profile', 'chat', 'recording',
         'livestreaming', 'etherpad', 'sharedvideo', 'settings', 'raisehand',
         'videoquality', 'filmstrip', 'invite', 'feedback', 'stats', 'shortcuts',

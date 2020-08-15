@@ -5,7 +5,7 @@ import { toggleDialog } from '../base/dialog';
 import { SecurityDialog } from './components/security-dialog';
 
 /**
- * Action that triggers toggle the security options dialog.
+ * Action that triggers toggle of the security options dialog.
  *
  * @returns {Function}
  */

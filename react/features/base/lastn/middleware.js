@@ -81,7 +81,6 @@ function _updateLastN({ getState }) {
     if (typeof appState !== 'undefined' && appState !== 'active') {
         lastN = 0;
     } else if (audioOnly) {
-
         const { screenShares } = state['features/video-layout'];
         const tileViewEnabled = shouldDisplayTileView(state);
         const largeVideoParticipantId = state['features/large-video'].participantId;
