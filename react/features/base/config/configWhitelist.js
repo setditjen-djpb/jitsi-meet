@@ -114,6 +114,7 @@ export default [
     'forceJVB121Ratio',
     'gatherStats',
     'googleApiApplicationClientID',
+    'brandingDataUrl',
     'hiddenDomain',
     'hosts',
     'iAmRecorder',

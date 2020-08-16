@@ -1,6 +1,6 @@
 // @flow
 
-import { ReducerRegistry } from '../base/redux';
+import { PersistenceRegistry, ReducerRegistry } from '../base/redux';
 
 import { SET_DYNAMIC_BRANDING_DATA, SET_DYNAMIC_BRANDING_READY } from './actionTypes';
 
@@ -13,10 +13,11 @@ const STORE_NAME = 'features/dynamic-branding';
 const DEFAULT_STATE = {
     backgroundColor: '',
     backgroundImageUrl: '',
-    customizationReady: true,
+    customizationReady: false,
     logoClickUrl: '',
     logoImageUrl: ''
 };
+
 
 /**
  * Reduces redux actions for the purposes of the feature {@code dynamic-branding}.
