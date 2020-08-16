@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-
+import { isMobileBrowser } from '../../../base/environment/utils';
 import { translate } from '../../../base/i18n';
 import { Icon, IconInviteMore } from '../../../base/icons';
 import { getParticipantCount } from '../../../base/participants';
@@ -82,7 +82,7 @@ function mapStateToProps(state) {
 
     return {
         _tileViewEnabled: shouldDisplayTileView(state),
-        _visible: isToolboxVisible(state) && isButtonEnabled('invite') && isAlone && !hide
+        _visible: !isMobileBrowser() && isToolboxVisible(state) && isButtonEnabled('invite') && isAlone && !hide
     };
 }
 

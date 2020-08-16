@@ -6,6 +6,7 @@ import { createInviteDialogEvent, sendAnalytics } from '../../../../analytics';
 import { getRoomName } from '../../../../base/conference';
 import { getInviteURL } from '../../../../base/connection';
 import { Dialog } from '../../../../base/dialog';
+import { isMobileBrowser } from '../../../../base/environment/utils';
 import { translate } from '../../../../base/i18n';
 import { JitsiRecordingConstants } from '../../../../base/lib-jitsi-meet';
 import { getLocalParticipant } from '../../../../base/participants';
@@ -152,7 +153,7 @@ function AddPeopleDialog({
                 <InviteByEmailSection
                     inviteSubject = { inviteSubject }
                     inviteText = { invite } />
-                <EmbedMeetingTrigger />
+                { !isMobileBrowser() && <EmbedMeetingTrigger /> }
                 <div className = 'invite-more-dialog separator' />
                 {
                     _liveStreamViewURL
