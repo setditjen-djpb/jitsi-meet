@@ -44,7 +44,6 @@ export const SET_JOIN_BY_PHONE_DIALOG_VISIBLITY = 'SET_JOIN_BY_PHONE_DIALOG_VISI
  */
 export const SET_PRECALL_TEST_RESULTS = 'SET_PRECALL_TEST_RESULTS';
 
-
 /**
  * Action type to disable the audio while on prejoin page.
  */

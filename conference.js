@@ -123,7 +123,7 @@ import {
     initPrejoin,
     isPrejoinPageEnabled,
     isPrejoinPageVisible,
-    setPrecallTestResults
+    makePrecallTest
 } from './react/features/prejoin';
 import { createRnnoiseProcessorPromise } from './react/features/rnnoise';
 import { toggleScreenshotCaptureEffect } from './react/features/screenshot-capture';
@@ -769,7 +769,7 @@ export default {
                 return c;
             });
 
-            // await this._makePrecallTest();
+            APP.store.dispatch(makePrecallTest(this._getConferenceOptions()));
 
             const { tryCreateLocalTracks, errors } = this.createInitialLocalTracks(initialOptions);
             const tracks = await tryCreateLocalTracks;
@@ -1082,20 +1082,6 @@ export default {
      */
     getP2PConnectionState() {
         return room && room.getP2PConnectionState();
-    },
-
-    /**
-     * Initializes the 'precallTest' and executes one test, storing the results.
-     *
-     * @private
-     * @returns {void}
-     */
-    async _makePrecallTest() {
-        await JitsiMeetJS.precallTest.init(this._getConferenceOptions());
-
-        const results = await JitsiMeetJS.precallTest.execute();
-
-        APP.store.dispatch(setPrecallTestResults(results));
     },
 
     /**
@@ -2876,7 +2862,14 @@ export default {
             this._room = undefined;
             room = undefined;
 
-            APP.API.notifyReadyToClose();
+            /**
+             * Don't call {@code notifyReadyToClose} if the promotional page flag is set
+             * and let the page take care of sending the message, since there will be
+             * a redirect to the page regardlessly.
+             */
+            if (!interfaceConfig.SHOW_PROMOTIONAL_CLOSE_PAGE) {
+                APP.API.notifyReadyToClose();
+            }
             APP.store.dispatch(maybeRedirectToWelcomePage(values[0]));
         });
     },
