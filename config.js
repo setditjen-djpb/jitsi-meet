@@ -438,6 +438,20 @@ var config = {
         // The Amplitude APP Key:
         amplitudeAPPKey: '08d9760dede15bbb4ca036ef8b99567b'
 
+        // Configuration for the rtcstats server:
+        // By enabling rtcstats server every time a conference is joined the rtcstats
+        // module connects to the provided rtcstatsEndpoint and sends statistics regarding
+        // PeerConnection states along with getStats metrics polled at the specified
+        // interval.
+        // rtcstatsEnabled: true,
+
+        // In order to enable rtcstats one needs to provide a endpoint url.
+        // rtcstatsEndpoint: wss://rtcstats-server-pilot.jitsi.net/,
+
+        // The interval at which rtcstats will poll getStats, defaults to 1000ms.
+        // If the value is set to 0 getStats won't be polled and the rtcstats client
+        // will only send data related to RTCPeerConnection events.
+        // rtcstatsPolIInterval: 1000
         // Array of script URLs to load as lib-jitsi-meet "analytics handlers".
         // scriptURLs: [
         // "libs/analytics-ga.min.js", // google-analytics
