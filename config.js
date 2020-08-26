@@ -154,6 +154,7 @@ var config = {
     // Note that it's not recommended to do this because simulcast is not
     // supported when  using H.264. For 1-to-1 calls this setting is enabled by
     // default and can be toggled in the p2p section.
+    // This option has been deprecated, use preferredCodec under videoQuality section instead.
     // preferH264: true,
 
     // If set to true, disable H.264 video codec by stripping it out of the
