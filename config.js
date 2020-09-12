@@ -346,13 +346,8 @@ var config = {
     // UI
     //
 
-<<<<<<< HEAD
-    // Use display name as XMPP nickname.
-    // useNicks: false,
-=======
     // Hides lobby button
     // hideLobbyButton: false,
->>>>>>> 9815b633fc63640d0728d4d0e7172537684e5290
 
     // Require users to always specify a display name.
     requireDisplayName: true,
