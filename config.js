@@ -117,6 +117,9 @@ var config = {
     // Valid values are in the range 6000 to 510000
     // opusMaxAverageBitrate: 20000,
 
+    // Enables redundancy for Opus
+    // enableOpusRed: false
+
     // Video
 
     // Sets the preferred resolution (height) for local video. Defaults to 720.
@@ -136,7 +139,7 @@ var config = {
 
     // How many participants while in the tile view mode, before the receiving video quality is reduced from HD to SD.
     // Use -1 to disable.
-    // maxFullResolutionParticipants: 2
+    // maxFullResolutionParticipants: 2,
 
     disableSimulcast: false,
 
@@ -343,8 +346,13 @@ var config = {
     // UI
     //
 
+<<<<<<< HEAD
     // Use display name as XMPP nickname.
     // useNicks: false,
+=======
+    // Hides lobby button
+    // hideLobbyButton: false,
+>>>>>>> 9815b633fc63640d0728d4d0e7172537684e5290
 
     // Require users to always specify a display name.
     requireDisplayName: true,
@@ -391,6 +399,10 @@ var config = {
     // enableCalendarIntegration: true,
     // When 'true', it shows an intermediate page before joining, where the user can  configure its devices.
     prejoinPageEnabled: true,
+
+    // Whether to automatically copy invitation URL after creating a room.
+    // Document should be focused for this option to work
+    // enableAutomaticUrlCopy: false,
 
     // Stats
     //
